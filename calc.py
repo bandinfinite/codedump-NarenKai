@@ -57,7 +57,9 @@ buttonprod.grid(row = 2, column = 3)
 buttondiv = tk.Button(bframe, text = '/', width = 8, bg = 'white', fg = 'black')
 buttondiv.grid(row = 3, column = 3)
 
-buttonequals = tk.Button(bframe, text = '=', width = 8, bg = 'white', fg = 'black')
+buttonequals = tk.Button(bframe, text = '=', width = 6, bg = 'white', fg = 'black')
 buttonequals.grid(row = 3, column = 1)
 
+buttonclear = tk.Button(bframe, text = 'C', width = 6, bg = 'white', fg = 'black')
+buttonclear.grid(row = 3, column = 2)
 root.mainloop()

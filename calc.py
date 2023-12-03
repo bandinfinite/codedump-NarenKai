@@ -37,6 +37,34 @@ def result():
             equation.set(res)
             expression = ''
         
+        elif 'eˣ' in expression:
+            expression = expression.replace('eˣ', '')
+            expression = int(expression)
+            res = str(math.exp(expression))
+            equation.set(res)
+            expression = ''
+        
+        elif 'log10' in expression:
+            expression = expression.replace('log10','')
+            expression = int(expression)
+            res = str(math.log10(expression))
+            equation.set(res)
+            expression = ''
+        
+        elif 'x²' in expression:
+            expression = expression.replace('x²', '')
+            expression = int(expression)
+            res = str(math.pow(expression, 2.0))
+            equation.set(res)
+            expression = ''
+        
+        elif 'x³' in expression:
+            expression = expression.replace('x³', '')
+            expression = int(expression)
+            res = str(math.pow(expression, 3.0))
+            equation.set(res)
+            expression = ''
+        
         else:
             res = str(eval(expression))
             equation.set(res)
@@ -59,7 +87,7 @@ def delete():
     
 if __name__ == "__main__":
     root = tk.Tk()
-    root.geometry("300x300")
+    root.geometry("300x400")
     root.title("Scientific Calculator")
     root.resizable(width=False, height=False)
     equation = StringVar()
@@ -105,6 +133,9 @@ if __name__ == "__main__":
 
     button9 = tk.Button(bframe, text = '0', width = 6, bg='white', fg = 'black', command = lambda:press(0))
     button9.grid(row= 3, column = 0)
+    
+    buttondeci = tk.Button(bframe, text = '.', width = 6, bg = 'white', fg = 'black', command = lambda: press('.'))
+    buttondeci.grid(row = 4, column = 0)
 
     buttonplus = tk.Button(bframe, text = '+', width = 8, bg = 'white', fg = 'black', command = lambda: press('+'))
     buttonplus.grid(row = 0, column = 3)
@@ -132,6 +163,18 @@ if __name__ == "__main__":
 
     buttontan = tk.Button(specialframe, text = 'tan', width = 6, bg = 'white', fg = 'black', command = lambda: press('tan'))
     buttontan.grid(row = 4, column = 2)
+    
+    buttonexponential = tk.Button(specialframe, text = 'eˣ', width = 6, bg = 'white', fg = 'black', command= lambda: press('eˣ'))
+    buttonexponential.grid(row = 5, column = 0)
+    
+    buttonlog = tk.Button(specialframe, text = 'log10', width = 6, bg = 'white', fg = 'black', command = lambda: press('log10'))
+    buttonlog.grid(row = 5, column = 1 )
+    
+    buttonsquare = tk.Button(specialframe, text = 'x²', width = 6, bg = 'white', fg = 'black', command = lambda: press('x²'))
+    buttonsquare.grid(row = 5, column = 2)
+    
+    buttoncube = tk.Button(specialframe, text = 'x³', width = 6, bg = 'white', fg = 'black', command = lambda: press('x³'))
+    buttoncube.grid(row = 6, column = 0)
 
 
 root.mainloop()

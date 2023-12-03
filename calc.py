@@ -102,103 +102,103 @@ def delete():
         
     
     
-if __name__ == "__main__":
-    root = tk.Tk()
-    root.configure(bg = 'grey')
-    root.geometry("300x400")
-    root.title("Scientific Calculator")
-    root.resizable(width=False, height=False)
-    equation = StringVar()
+root = tk.Tk()
+root.configure(bg = 'grey')
+root.geometry("300x400")
+root.title("Scientific Calculator")
+root.resizable(width=False, height=False)
+equation = StringVar()
 
-    label = tk.Label(root, text = "N and K Sci Calc.", bg='grey', fg='white', font = ('Arial', 18))
-    label.pack(padx = 10, pady = 10)
+label = tk.Label(root, text = "N and K Sci Calc.", bg='grey', fg='white', font = ('Arial', 18))
+label.pack(padx = 10, pady = 10)
 
-    entry = tk.Entry(root, width = 30, textvariable=equation)
-    entry.pack(padx = 10, pady = 10)
-   
-    bframe = tk.Frame(root, bg = 'grey')
-    bframe.pack(padx = 10, pady = 10)
+entry = tk.Entry(root, width = 30, textvariable=equation)
+entry.pack(padx = 10, pady = 10)
 
-    specialframe = tk.Frame(root)
-    specialframe.pack(padx = 10, pady = 10)
+bframe = tk.Frame(root, bg = 'grey')
+bframe.pack(padx = 10, pady = 10)
 
-    button = tk.Button(bframe, text = '9', width = 6, bg='white', fg = 'black', command = lambda: press(9))
-    button.grid(row= 0, column = 0)
+specialframe = tk.Frame(root)
+specialframe.pack(padx = 10, pady = 10)
 
-    button1 = tk.Button(bframe, text = '8', width = 6, bg='white', fg = 'black', command = lambda: press(8))
-    button1.grid(row= 0, column = 1)
+button = tk.Button(bframe, text = '9', width = 6, bg='white', fg = 'black', command = lambda: press(9))
+button.grid(row= 0, column = 0)
 
-    button2 = tk.Button(bframe, text = '7', width = 6, bg='white', fg = 'black', command = lambda: press(7))
-    button2.grid(row= 0, column = 2)
+button1 = tk.Button(bframe, text = '8', width = 6, bg='white', fg = 'black', command = lambda: press(8))
+button1.grid(row= 0, column = 1)
 
-    button3 = tk.Button(bframe, text = '6', width = 6, bg='white', fg = 'black', command = lambda: press(6))
-    button3.grid(row= 1, column = 0)
+button2 = tk.Button(bframe, text = '7', width = 6, bg='white', fg = 'black', command = lambda: press(7))
+button2.grid(row= 0, column = 2)
 
-    button4 = tk.Button(bframe, text = '5', width = 6, bg='white', fg = 'black', command = lambda: press(5))
-    button4.grid(row= 1, column = 1)
+button3 = tk.Button(bframe, text = '6', width = 6, bg='white', fg = 'black', command = lambda: press(6))
+button3.grid(row= 1, column = 0)
 
-    button5 = tk.Button(bframe, text = '4', width = 6, bg='white', fg = 'black', command = lambda: press(4))
-    button5.grid(row= 1, column = 2)
+button4 = tk.Button(bframe, text = '5', width = 6, bg='white', fg = 'black', command = lambda: press(5))
+button4.grid(row= 1, column = 1)
 
-    button6 = tk.Button(bframe, text = '3', width = 6, bg='white', fg = 'black', command = lambda: press(3))
-    button6.grid(row= 2, column = 0)
+button5 = tk.Button(bframe, text = '4', width = 6, bg='white', fg = 'black', command = lambda: press(4))
+button5.grid(row= 1, column = 2)
 
-    button7 = tk.Button(bframe, text = '2', width = 6, bg='white', fg = 'black', command = lambda: press(2))
-    button7.grid(row= 2, column = 1)
+button6 = tk.Button(bframe, text = '3', width = 6, bg='white', fg = 'black', command = lambda: press(3))
+button6.grid(row= 2, column = 0)
 
-    button8 = tk.Button(bframe, text = '1', width = 6, bg='white', fg = 'black', command = lambda: press(1))
-    button8.grid(row= 2, column = 2)
+button7 = tk.Button(bframe, text = '2', width = 6, bg='white', fg = 'black', command = lambda: press(2))
+button7.grid(row= 2, column = 1)
 
-    button9 = tk.Button(bframe, text = '0', width = 6, bg='white', fg = 'black', command = lambda:press(0))
-    button9.grid(row= 3, column = 0)
-    
-    buttondeci = tk.Button(bframe, text = '.', width = 6, bg = 'white', fg = 'black', command = lambda: press('.'))
-    buttondeci.grid(row = 4, column = 0)
+button8 = tk.Button(bframe, text = '1', width = 6, bg='white', fg = 'black', command = lambda: press(1))
+button8.grid(row= 2, column = 2)
 
-    buttonplus = tk.Button(bframe, text = '+', width = 8, bg = 'white', fg = 'black', command = lambda: press('+'))
-    buttonplus.grid(row = 0, column = 3)
+button9 = tk.Button(bframe, text = '0', width = 6, bg='white', fg = 'black', command = lambda:press(0))
+button9.grid(row= 3, column = 0)
 
-    buttonminus = tk.Button(bframe, text = '-', width = 8, bg = 'white', fg = 'black', command = lambda: press('-'))
-    buttonminus.grid(row = 1, column = 3)
+buttondeci = tk.Button(bframe, text = '.', width = 6, bg = 'white', fg = 'black', command = lambda: press('.'))
+buttondeci.grid(row = 4, column = 0)
 
-    buttonprod = tk.Button(bframe, text = 'x', width = 8, bg = 'white', fg = 'black', command = lambda: press('*') )
-    buttonprod.grid(row = 2, column = 3)
+buttonplus = tk.Button(bframe, text = '+', width = 8, bg = 'white', fg = 'black', command = lambda: press('+'))
+buttonplus.grid(row = 0, column = 3)
 
-    buttondiv = tk.Button(bframe, text = '/', width = 8, bg = 'white', fg = 'black', command = lambda: press('/'))
-    buttondiv.grid(row = 3, column = 3)
+buttonminus = tk.Button(bframe, text = '-', width = 8, bg = 'white', fg = 'black', command = lambda: press('-'))
+buttonminus.grid(row = 1, column = 3)
 
-    buttonequals = tk.Button(bframe, text = '=', width = 6, bg = 'white', fg = 'black', command = result)
-    buttonequals.grid(row = 3, column = 1)
+buttonprod = tk.Button(bframe, text = 'x', width = 8, bg = 'white', fg = 'black', command = lambda: press('*') )
+buttonprod.grid(row = 2, column = 3)
 
-    buttonclear = tk.Button(bframe, text = 'C', width = 6, bg = 'white', fg = 'black', command = delete)
-    buttonclear.grid(row = 3, column = 2)
+buttondiv = tk.Button(bframe, text = '/', width = 8, bg = 'white', fg = 'black', command = lambda: press('/'))
+buttondiv.grid(row = 3, column = 3)
 
-    buttonsin = tk.Button(specialframe, text = 'sin', width = 6, bg = 'white', fg = 'black', command = lambda: press('sin'))
-    buttonsin.grid(row = 4, column = 0)
+buttonequals = tk.Button(bframe, text = '=', width = 6, bg = 'white', fg = 'black', command = result)
+buttonequals.grid(row = 3, column = 1)
 
-    buttoncos = tk.Button(specialframe, text = 'cos', width = 6, bg = 'white', fg = 'black', command = lambda: press('cos'))
-    buttoncos.grid(row = 4, column = 1)
+buttonclear = tk.Button(bframe, text = 'C', width = 6, bg = 'white', fg = 'black', command = delete)
+buttonclear.grid(row = 3, column = 2)
 
-    buttontan = tk.Button(specialframe, text = 'tan', width = 6, bg = 'white', fg = 'black', command = lambda: press('tan'))
-    buttontan.grid(row = 4, column = 2)
-    
-    buttonexponential = tk.Button(specialframe, text = 'eˣ', width = 6, bg = 'white', fg = 'black', command= lambda: press('eˣ'))
-    buttonexponential.grid(row = 5, column = 0)
-    
-    buttonlog = tk.Button(specialframe, text = 'log10', width = 6, bg = 'white', fg = 'black', command = lambda: press('log10'))
-    buttonlog.grid(row = 5, column = 1 )
-    
-    buttonsquare = tk.Button(specialframe, text = 'x²', width = 6, bg = 'white', fg = 'black', command = lambda: press('x²'))
-    buttonsquare.grid(row = 5, column = 2)
-    
-    buttoncube = tk.Button(specialframe, text = 'x³', width = 6, bg = 'white', fg = 'black', command = lambda: press('x³'))
-    buttoncube.grid(row = 6, column = 0)
-    
-    buttonsqrt = tk.Button(specialframe, text = 'sqrt', width = 6, bg = 'white', fg = 'black', command = lambda: press('sqrt'))
-    buttonsqrt.grid(row = 6, column = 1)
-    
-    buttonln = tk.Button(specialframe, text = 'ln', width = 6, bg = 'white', fg = 'black', command = lambda: press('ln'))
-    buttonln.grid(row = 6, column = 2)
+buttonsin = tk.Button(specialframe, text = 'sin', width = 6, bg = 'white', fg = 'black', command = lambda: press('sin'))
+buttonsin.grid(row = 4, column = 0)
+
+buttoncos = tk.Button(specialframe, text = 'cos', width = 6, bg = 'white', fg = 'black', command = lambda: press('cos'))
+buttoncos.grid(row = 4, column = 1)
+
+buttontan = tk.Button(specialframe, text = 'tan', width = 6, bg = 'white', fg = 'black', command = lambda: press('tan'))
+buttontan.grid(row = 4, column = 2)
+
+buttonexponential = tk.Button(specialframe, text = 'eˣ', width = 6, bg = 'white', fg = 'black', command= lambda: press('eˣ'))
+buttonexponential.grid(row = 5, column = 0)
+
+buttonlog = tk.Button(specialframe, text = 'log10', width = 6, bg = 'white', fg = 'black', command = lambda: press('log10'))
+buttonlog.grid(row = 5, column = 1 )
+
+buttonsquare = tk.Button(specialframe, text = 'x²', width = 6, bg = 'white', fg = 'black', command = lambda: press('x²'))
+buttonsquare.grid(row = 5, column = 2)
+
+buttoncube = tk.Button(specialframe, text = 'x³', width = 6, bg = 'white', fg = 'black', command = lambda: press('x³'))
+buttoncube.grid(row = 6, column = 0)
+
+buttonsqrt = tk.Button(specialframe, text = 'sqrt', width = 6, bg = 'white', fg = 'black', command = lambda: press('sqrt'))
+buttonsqrt.grid(row = 6, column = 1)
+
+buttonln = tk.Button(specialframe, text = 'ln', width = 6, bg = 'white', fg = 'black', command = lambda: press('ln'))
+buttonln.grid(row = 6, column = 2)
+
 
 
 root.mainloop()

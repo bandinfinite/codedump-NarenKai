@@ -64,7 +64,24 @@ def result():
             res = str(math.pow(expression, 3.0))
             equation.set(res)
             expression = ''
+            
+        elif 'sqrt' in expression:
+            expression = expression.replace('sqrt', '')
+            expression = float(expression)
+            res = str(math.sqrt(expression))
+            equation.set(res)
+            expression = ''
+            
+        elif 'ln' in expression:
+            expression = expression.replace('ln', '')
+            k = math.exp(1.0)
+            expression = float(expression)
+            res = str(math.log(expression, k))
+            equation.set(res)
+            expression = ''
         
+        
+            
         else:
             res = str(eval(expression))
             equation.set(res)
@@ -175,6 +192,12 @@ if __name__ == "__main__":
     
     buttoncube = tk.Button(specialframe, text = 'x³', width = 6, bg = 'white', fg = 'black', command = lambda: press('x³'))
     buttoncube.grid(row = 6, column = 0)
+    
+    buttonsqrt = tk.Button(specialframe, text = 'sqrt', width = 6, bg = 'white', fg = 'black', command = lambda: press('sqrt'))
+    buttonsqrt.grid(row = 6, column = 1)
+    
+    buttonln = tk.Button(specialframe, text = 'ln', width = 6, bg = 'white', fg = 'black', command = lambda: press('ln'))
+    buttonln.grid(row = 6, column = 2)
 
 
 root.mainloop()

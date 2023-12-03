@@ -21,12 +21,25 @@ def result():
             equation.set(res)
             expression = ''
         
-        else:
-            
-            res = str(eval(expression))
-            
+        elif 'cos' in expression:
+            expression = expression.replace('cos', '')
+            expression = int(expression)
+            expression = math.radians(expression)
+            res = str(math.cos(expression))
             equation.set(res)
-            
+            expression = ''
+        
+        elif 'tan' in expression:
+            expression = expression.replace('tan', '')
+            expression = int(expression)
+            expression = math.radians(expression)
+            res = str(math.tan(expression))
+            equation.set(res)
+            expression = ''
+        
+        else:
+            res = str(eval(expression))
+            equation.set(res)
             expression = ''
         
     except:

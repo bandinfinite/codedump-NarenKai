@@ -43,9 +43,20 @@ button8 = tk.Button(bframe, text = '1', width = 6, bg='white', fg = 'black')
 button8.grid(row= 2, column = 2)
 
 button9 = tk.Button(bframe, text = '0', width = 6, bg='white', fg = 'black')
-button9.grid(row= 3, column = 1)
+button9.grid(row= 3, column = 0)
 
 buttonplus = tk.Button(bframe, text = '+', width = 8, bg = 'white', fg = 'black')
 buttonplus.grid(row = 0, column = 3)
 
+buttonminus = tk.Button(bframe, text = '-', width = 8, bg = 'white', fg = 'black')
+buttonminus.grid(row = 1, column = 3)
+
+buttonprod = tk.Button(bframe, text = 'x', width = 8, bg = 'white', fg = 'black')
+buttonprod.grid(row = 2, column = 3)
+
+buttondiv = tk.Button(bframe, text = '/', width = 8, bg = 'white', fg = 'black')
+buttondiv.grid(row = 3, column = 3)
+
+buttonequals = tk.Button(bframe, text = '=', width = 8, bg = 'white', fg = 'black')
+buttonequals.grid(row = 3, column = 1)
 root.mainloop()

@@ -2,7 +2,7 @@ import tkinter as tk
 import math 
 
 root = tk.Tk()
-root.geometry("300x400")
+root.geometry("300x300")
 root.title("Scientific Calculator")
 
 label = tk.Label(root, text = "CASIO", bg='black', fg='white', font = ('Courier Sans', 18))
@@ -59,4 +59,5 @@ buttondiv.grid(row = 3, column = 3)
 
 buttonequals = tk.Button(bframe, text = '=', width = 8, bg = 'white', fg = 'black')
 buttonequals.grid(row = 3, column = 1)
+
 root.mainloop()

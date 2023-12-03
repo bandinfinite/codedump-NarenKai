@@ -4,6 +4,7 @@ import math
 root = tk.Tk()
 root.geometry("300x300")
 root.title("Scientific Calculator")
+root.resizable(width=False, height=False)
 
 label = tk.Label(root, text = "CASIO", bg='black', fg='white', font = ('Courier Sans', 18))
 label.pack(padx = 10, pady = 10)
@@ -11,32 +12,14 @@ label.pack(padx = 10, pady = 10)
 entry = tk.Entry(root, width = 30)
 entry.pack(padx = 10, pady = 10)
 
-
-
-def add(num1,num2):
-    num1 = int(num1)
-    num2 = int(num2)
-    return num1+num2
-
-def sub(num1, num2):
-    num1 = int(num1)
-    num2 = int(num2)
-    return num1-num2
-
-def mul(num1,num2):
-    num1 = int(num1)
-    num2 = int(num2)
-    return num1*num2
-
-def div(num1,num2):
-    num1 = int(num1)
-    num2 = int(num2)
+expression = ''
+def press(num):
+    global expression
+    expression += str(num)
     
-    try:
-        num3 = num1/num2
-        return num3
-    except:
-        return "Number cannot be divided by zero"
+    
+
+
 
 bframe = tk.Frame(root)
 bframe.pack(padx = 10, pady = 10)
@@ -74,13 +57,13 @@ button8.grid(row= 2, column = 2)
 button9 = tk.Button(bframe, text = '0', width = 6, bg='white', fg = 'black')
 button9.grid(row= 3, column = 0)
 
-buttonplus = tk.Button(bframe, text = '+', width = 8, bg = 'white', fg = 'black', command = add)
+buttonplus = tk.Button(bframe, text = '+', width = 8, bg = 'white', fg = 'black', command = lambda: press('+'))
 buttonplus.grid(row = 0, column = 3)
 
-buttonminus = tk.Button(bframe, text = '-', width = 8, bg = 'white', fg = 'black', command = sub)
+buttonminus = tk.Button(bframe, text = '-', width = 8, bg = 'white', fg = 'black', command = lambda: press('-'))
 buttonminus.grid(row = 1, column = 3)
 
-buttonprod = tk.Button(bframe, text = 'x', width = 8, bg = 'white', fg = 'black', command = mul)
+buttonprod = tk.Button(bframe, text = 'x', width = 8, bg = 'white', fg = 'black', command = lambda: press('') )
 buttonprod.grid(row = 2, column = 3)
 
 buttondiv = tk.Button(bframe, text = '/', width = 8, bg = 'white', fg = 'black', command = div)

@@ -104,19 +104,19 @@ def delete():
     
 if __name__ == "__main__":
     root = tk.Tk()
-    root.configure(bg = 'black')
+    root.configure(bg = 'grey')
     root.geometry("300x400")
     root.title("Scientific Calculator")
     root.resizable(width=False, height=False)
     equation = StringVar()
 
-    label = tk.Label(root, text = "CASIO", bg='black', fg='white', font = ('Arial', 18))
+    label = tk.Label(root, text = "N and K Sci Calc.", bg='grey', fg='white', font = ('Arial', 18))
     label.pack(padx = 10, pady = 10)
 
     entry = tk.Entry(root, width = 30, textvariable=equation)
     entry.pack(padx = 10, pady = 10)
    
-    bframe = tk.Frame(root, bg='black')
+    bframe = tk.Frame(root, bg = 'grey')
     bframe.pack(padx = 10, pady = 10)
 
     specialframe = tk.Frame(root)

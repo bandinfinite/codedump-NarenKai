@@ -12,8 +12,37 @@ entry = tk.Entry(root, width = 30)
 entry.pack(padx = 10, pady = 10)
 
 
+
+def add(num1,num2):
+    num1 = int(num1)
+    num2 = int(num2)
+    return num1+num2
+
+def sub(num1, num2):
+    num1 = int(num1)
+    num2 = int(num2)
+    return num1-num2
+
+def mul(num1,num2):
+    num1 = int(num1)
+    num2 = int(num2)
+    return num1*num2
+
+def div(num1,num2):
+    num1 = int(num1)
+    num2 = int(num2)
+    
+    try:
+        num3 = num1/num2
+        return num3
+    except:
+        return "Number cannot be divided by zero"
+
 bframe = tk.Frame(root)
 bframe.pack(padx = 10, pady = 10)
+
+specialframe = tk.Frame(root)
+specialframe.pack(padx = 10, pady = 10)
 
 button = tk.Button(bframe, text = '9', width = 6, bg='white', fg = 'black')
 button.grid(row= 0, column = 0)
@@ -45,16 +74,16 @@ button8.grid(row= 2, column = 2)
 button9 = tk.Button(bframe, text = '0', width = 6, bg='white', fg = 'black')
 button9.grid(row= 3, column = 0)
 
-buttonplus = tk.Button(bframe, text = '+', width = 8, bg = 'white', fg = 'black')
+buttonplus = tk.Button(bframe, text = '+', width = 8, bg = 'white', fg = 'black', command = add)
 buttonplus.grid(row = 0, column = 3)
 
-buttonminus = tk.Button(bframe, text = '-', width = 8, bg = 'white', fg = 'black')
+buttonminus = tk.Button(bframe, text = '-', width = 8, bg = 'white', fg = 'black', command = sub)
 buttonminus.grid(row = 1, column = 3)
 
-buttonprod = tk.Button(bframe, text = 'x', width = 8, bg = 'white', fg = 'black')
+buttonprod = tk.Button(bframe, text = 'x', width = 8, bg = 'white', fg = 'black', command = mul)
 buttonprod.grid(row = 2, column = 3)
 
-buttondiv = tk.Button(bframe, text = '/', width = 8, bg = 'white', fg = 'black')
+buttondiv = tk.Button(bframe, text = '/', width = 8, bg = 'white', fg = 'black', command = div)
 buttondiv.grid(row = 3, column = 3)
 
 buttonequals = tk.Button(bframe, text = '=', width = 6, bg = 'white', fg = 'black')
@@ -62,4 +91,15 @@ buttonequals.grid(row = 3, column = 1)
 
 buttonclear = tk.Button(bframe, text = 'C', width = 6, bg = 'white', fg = 'black')
 buttonclear.grid(row = 3, column = 2)
+
+buttonsin = tk.Button(specialframe, text = 'sin', width = 6, bg = 'white', fg = 'black')
+buttonsin.grid(row = 4, column = 0)
+
+buttoncos = tk.Button(specialframe, text = 'cos', width = 6, bg = 'white', fg = 'black')
+buttoncos.grid(row = 4, column = 1)
+
+buttontan = tk.Button(specialframe, text = 'tan', width = 6, bg = 'white', fg = 'black')
+buttontan.grid(row = 4, column = 2)
+
+
 root.mainloop()

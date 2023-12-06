@@ -8,7 +8,7 @@ expression = ''
 def press(num):
     global expression
     expression += str(num)
-    equation.set(num)
+    equation.set(expression)
     
 def result():
     try:

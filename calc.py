@@ -199,6 +199,12 @@ buttonsqrt.grid(row = 6, column = 1)
 buttonln = tk.Button(specialframe, text = 'ln', width = 6, bg = 'white', fg = 'black', command = lambda: press('ln'))
 buttonln.grid(row = 6, column = 2)
 
+buttonrightsimplebracket = tk.Button(bframe, text = '(', width = 6, bg = 'white', fg = 'black', command = lambda: press('('))
+buttonrightsimplebracket.grid(row = 4, column = 2)
+
+buttonleftsimplebracket = tk.Button(bframe, text = ')', width = 6, bg = 'white', fg = 'black', command = lambda: press(')'))
+buttonleftsimplebracket.grid(row = 4, column = 3)
+
 
 
 

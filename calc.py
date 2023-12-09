@@ -15,7 +15,7 @@ def result():
         global expression
         if 'sin' in expression:
             expression = expression.replace('sin', '')
-            expression = int(expression)
+            expression = float(expression)
             expression = math.radians(expression)
             res = str(math.sin(expression))
             equation.set(res)
@@ -23,7 +23,7 @@ def result():
         
         elif 'cos' in expression:
             expression = expression.replace('cos', '')
-            expression = int(expression)
+            expression = float(expression)
             expression = math.radians(expression)
             res = str(math.cos(expression))
             equation.set(res)
@@ -31,7 +31,7 @@ def result():
         
         elif 'tan' in expression:
             expression = expression.replace('tan', '')
-            expression = int(expression)
+            expression = float(expression)
             expression = math.radians(expression)
             res = str(math.tan(expression))
             equation.set(res)
@@ -39,28 +39,28 @@ def result():
         
         elif 'eˣ' in expression:
             expression = expression.replace('eˣ', '')
-            expression = int(expression)
+            expression = float(expression)
             res = str(math.exp(expression))
             equation.set(res)
             expression = ''
         
         elif 'log10' in expression:
             expression = expression.replace('log10','')
-            expression = int(expression)
+            expression = float(expression)
             res = str(math.log10(expression))
             equation.set(res)
             expression = ''
         
         elif 'x²' in expression:
             expression = expression.replace('x²', '')
-            expression = int(expression)
+            expression = float(expression)
             res = str(math.pow(expression, 2.0))
             equation.set(res)
             expression = ''
         
         elif 'x³' in expression:
             expression = expression.replace('x³', '')
-            expression = int(expression)
+            expression = float(expression)
             res = str(math.pow(expression, 3.0))
             equation.set(res)
             expression = ''
@@ -83,9 +83,13 @@ def result():
         
             
         else:
-            res = str(eval(expression))
-            equation.set(res)
-            expression = ''
+            try:
+                expression = entry.get(); res = str(eval(expression)); equation.set(res)
+                expression = ''
+            except:
+                res = str(eval(expression))
+                equation.set(res)
+                expression = ''
         
     except:
         
@@ -169,6 +173,7 @@ buttondiv.grid(row = 3, column = 3)
 buttonequals = tk.Button(bframe, text = '=', width = 6, bg = 'white', fg = 'black', command = result)
 buttonequals.grid(row = 3, column = 1)
 
+
 buttonclear = tk.Button(bframe, text = 'C', width = 6, bg = 'white', fg = 'black', command = delete)
 buttonclear.grid(row = 3, column = 2)
 
@@ -200,10 +205,10 @@ buttonln = tk.Button(specialframe, text = 'ln', width = 6, bg = 'white', fg = 'b
 buttonln.grid(row = 6, column = 2)
 
 buttonrightsimplebracket = tk.Button(bframe, text = '(', width = 6, bg = 'white', fg = 'black', command = lambda: press('('))
-buttonrightsimplebracket.grid(row = 4, column = 2)
+buttonrightsimplebracket.grid(row = 4, column = 1)
 
 buttonleftsimplebracket = tk.Button(bframe, text = ')', width = 6, bg = 'white', fg = 'black', command = lambda: press(')'))
-buttonleftsimplebracket.grid(row = 4, column = 3)
+buttonleftsimplebracket.grid(row = 4, column = 2)
 
 
 

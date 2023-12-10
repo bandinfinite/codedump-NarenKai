@@ -9,6 +9,11 @@ def press(num):
     global expression
     expression += str(num)
     equation.set(expression)
+
+def answer(event):
+    result()
+
+
     
 def result():
     try:
@@ -172,10 +177,12 @@ buttondiv.grid(row = 3, column = 3)
 
 buttonequals = tk.Button(bframe, text = '=', width = 6, bg = 'white', fg = 'black', command = result)
 buttonequals.grid(row = 3, column = 1)
+root.bind("<Return>", answer)
 
 
 buttonclear = tk.Button(bframe, text = 'C', width = 6, bg = 'white', fg = 'black', command = delete)
 buttonclear.grid(row = 3, column = 2)
+
 
 buttonsin = tk.Button(specialframe, text = 'sin', width = 6, bg = 'white', fg = 'black', command = lambda: press('sin'))
 buttonsin.grid(row = 4, column = 0)

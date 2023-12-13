@@ -102,6 +102,7 @@ def result():
         equation.set("Error.")
         expression = ''
         
+        
     
 def delete():
     global expression
@@ -138,6 +139,7 @@ root = tk.Tk()
 root.configure(bg = 'grey')
 root.geometry("300x400")
 root.title("Scientific Calculator")
+root.iconbitmap('favicon.ico')
 root.resizable(width=False, height=False)
 equation = StringVar()
 menubar = Menu(root)

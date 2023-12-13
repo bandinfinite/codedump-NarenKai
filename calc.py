@@ -1,4 +1,5 @@
 import tkinter as tk
+import webbrowser
 from tkinter import *
 import math 
 
@@ -49,8 +50,8 @@ def result():
             equation.set(res)
             expression = ''
         
-        elif 'log10' in expression:
-            expression = expression.replace('log10','')
+        elif 'log₁₀' in expression:
+            expression = expression.replace('log₁₀','')
             expression = float(expression)
             res = str(math.log10(expression))
             equation.set(res)
@@ -106,6 +107,28 @@ def delete():
     global expression
     expression = ''
     equation.set('')
+    
+def webopener():
+    webbrowser.open('https://schoolwaalacodedumps.blogspot.com/')
+    
+def about():
+    about_window = Tk()
+    about_window.title("About")
+    about_window.resizable(width = False, height = False)
+    about_window.configure(bg = 'grey')
+    about_window.geometry("200x200")
+    frame = Frame(about_window)
+    frame.configure(bg = 'grey')
+    frame.pack()
+    message = Label(frame, text = "About US!", font = ("Arial", 13), bg = 'grey', fg = 'white')
+    message.pack()
+    mainmessage = Message(frame, text = "We are aspiring coders from Mars (jk). We started creating python applications as a joke when we saw a tkinter video. Now it fueled our curiousness and hope to reach higher and higher in this programming world. ", bg = 'grey', fg = 'white')
+    mainmessage.pack()
+    redirect_button = Button(frame, text = "Redirect to the blog site.", font = ('Arial', 10), height = 3, bg = 'white', fg = 'black', command = webopener)
+    redirect_button.pack(padx = 10, pady = 10)
+    
+    about_window.mainloop()
+
 
 
         
@@ -117,6 +140,14 @@ root.geometry("300x400")
 root.title("Scientific Calculator")
 root.resizable(width=False, height=False)
 equation = StringVar()
+menubar = Menu(root)
+Aboutmenu = Menu(menubar)
+menubar.add_cascade(label = 'Help', menu = Aboutmenu)
+Aboutmenu.add_command(label = "About", command = about)
+
+root.config(menu =  menubar)
+
+
 
 label = tk.Label(root, text = "N and K Sci Calc.", bg='grey', fg='white', font = ('Arial', 18))
 label.pack(padx = 10, pady = 10)
@@ -196,7 +227,7 @@ buttontan.grid(row = 4, column = 2)
 buttonexponential = tk.Button(specialframe, text = 'eˣ', width = 6, bg = 'white', fg = 'black', command= lambda: press('eˣ'))
 buttonexponential.grid(row = 5, column = 0)
 
-buttonlog = tk.Button(specialframe, text = 'log10', width = 6, bg = 'white', fg = 'black', command = lambda: press('log10'))
+buttonlog = tk.Button(specialframe, text = 'log₁₀', width = 6, bg = 'white', fg = 'black', command = lambda: press('log₁₀'))
 buttonlog.grid(row = 5, column = 1 )
 
 buttonsquare = tk.Button(specialframe, text = 'x²', width = 6, bg = 'white', fg = 'black', command = lambda: press('x²'))

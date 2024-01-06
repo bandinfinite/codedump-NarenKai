@@ -25,7 +25,7 @@ entries_frame = Frame(root, bg="#535c68")
 entries_frame.pack(side=TOP, fill=X)
 title = Label(
     entries_frame,
-    text="Employee Management System",
+    text="Student mark manager",
     font=("Calibri", 18, "bold"),
     bg="#535c68",
     fg="white",

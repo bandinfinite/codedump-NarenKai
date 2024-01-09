@@ -195,7 +195,7 @@ def excel():
             j += 1
 
     wb.save(filename="Students.xlsx")
-
+    messagebox.showinfo('Success','Execel file saved')
 
 btn_frame = Frame(entries_frame, bg="#535c68")
 btn_frame.grid(row=6, column=0, columnspan=4, padx=5, pady=5, sticky="w")
